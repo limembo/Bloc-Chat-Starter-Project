@@ -1,11 +1,16 @@
 <section class="sidebar">
-    <h1>Bloc Chat</h1>
+    <h1 class="site-title">Bloc Chat</h1>
     <button class="button-space" type="button" ng-click="home.open()">Add Room</button>
         <div ng-repeat="room in home.rooms">
-            <p>{{ room.$value }}</p>
+            <a class="room-list" ng-click="home.setCurrentRoom(room)">{{ room.$value }}</a>
         </div>
 </section>
 
-<section>
-    <p>{{ home.chatRoomTitle }}</p>
+<section class="messages-container">
+    <h2 class="room-title">{{ home.currentRoom.$value }}</h2>
+        <div ng-repeat="messages in home.messages">
+            <div class="username"><strong>{{ messages.username }}:</strong> {{ messages.content }}
+            </div>
+            <div class="sent-at">{{ messages.sentAt }}</div>
+        </div>
 </section>
