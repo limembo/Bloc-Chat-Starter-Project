@@ -59,10 +59,6 @@ button[type=button] {
     border: 2px solid #000;
 }
 
-input:focus{
-    color: #006699;
-}
-
 input {
     height: 20px;
     width: 200px;
@@ -96,7 +92,7 @@ input {
 }
 
 .messages-container {
-    padding-left: 400px;
+    padding-left: 300px;
 }
 
 .room-title {
@@ -107,7 +103,7 @@ input {
 .username {
     color: #000;
     font-size: 18px;
-    float: left;
+    padding-bottom: 15px;
 }
 
 .sent-at {
@@ -115,4 +111,28 @@ input {
     font-size: 18px;
     float: right;
     padding-right: 20px;
+}
+
+.send-message {
+    position: fixed;
+    bottom: 0px;
+    padding-left: 235px;
+    width: 100%;
+}
+
+.message-input {
+    width: 500px;
+    border: 0px;
+    float: left;
+    padding: 25px 0 20px 10px;
+}
+
+section.send-message {
+    width: 80%;
+}
+
+.send-button {
+    float:right;
+    height: 70px;
+    color: #000000;
 }

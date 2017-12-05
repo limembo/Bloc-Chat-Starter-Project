@@ -8,9 +8,15 @@
 
 <section class="messages-container">
     <h2 class="room-title">{{ home.currentRoom.$value }}</h2>
-         <div class="messages-list" ng-repeat="messages in home.messages">
+        <div class="messages-list" ng-repeat="messages in home.messages">
             <div class="username"><strong>{{ messages.username }}:</strong> {{ messages.content }}
             </div>
-            <div class="sent-at">{{ messages.sentAt }}</div>
+            <div class="sent-at">{{ messages.sentAt | date: "shortTime" }}</div>
         </div>
+</section>
+
+<section class="send-message">
+    <hr style="margin: 0px">
+        <input class="message-input" type="text" name="input" placeholder="Type your message here" class ng-model='home.newMessage.content'>
+        <button class="send-button" type="button" ng-click="home.sendMessage()">Send Message</button>
 </section>
